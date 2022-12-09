@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		fetch("http://localhost:3000/students-list")
+		.then((res)=>{
+			return res.json()
+		})
+		.then((jsonRes)=>{
+			console.log(jsonRes)
+		})
+		function display(students){
+			var group=document.getElementById("students")
+			for(var i=0;i<students.length;i++){
+				group.innerHTML+=`
+
+				<div>
+				<p>${students[i].id}</p>
+				<p>${students[i].stdname}</p>
+				<p>${students[i].stdclass}</p>
+				</div>`
+			}
+		}
+	</script>
+</body>
+</html>
